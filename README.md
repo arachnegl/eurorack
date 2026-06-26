@@ -1,31 +1,47 @@
 Mutable Instruments' Eurorack Modules.
 
-* [Blades](http://mutable-instruments.net/modules/blades): Dual multimode filter.
-* [Blinds](http://mutable-instruments.net/modules/blinds): Quad VC-polarizer.
-* [Braids](http://mutable-instruments.net/modules/braids): Macro-oscillator.
-* [Branches](http://mutable-instruments.net/modules/branches): Dual Bernoulli gate.
-* [Clouds](http://mutable-instruments.net/modules/clouds): Texture synthesizer.
-* [Ears](http://mutable-instruments.net/modules/ears): Contact microphone.
-* [Edges](http://mutable-instruments.net/modules/edges): Quad chiptune digital oscillator.
-* [Elements](http://mutable-instruments.net/modules/elements): Modal synthesizer.
-* [Frames](http://mutable-instruments.net/modules/frames): Keyframer/mixer.
-* [Grids](http://mutable-instruments.net/modules/grids): Topographic drum sequencer.
-* [Kinks](http://mutable-instruments.net/modules/kinks): Utility module - rectifier, analog logic, S&H, noise.
-* [Links](http://mutable-instruments.net/modules/links): Utility module - buffer, mixer.
 * [Marbles](http://mutable-instruments.net/modules/marbles): Random sampler.
-* [Peaks](http://mutable-instruments.net/modules/peaks): Dual trigger converter.
 * [Plaits](http://mutable-instruments.net/modules/plaits): Macro oscillator.
 * [Rings](http://mutable-instruments.net/modules/rings): Resonator.
-* [Ripples](http://mutable-instruments.net/modules/ripples): Liquid 2-pole BP, 2-pole LP and 4-pole LP filter.
-* [Shades](http://mutable-instruments.net/modules/shades): Triple attenuverter.
-* [Shelves](http://mutable-instruments.net/modules/shelves): EQ filter.
-* [Stages](http://mutable-instruments.net/modules/stages): Segment generator.
-* [Streams](http://mutable-instruments.net/modules/streams): Dual dynamics gate.
-* [Tides](http://mutable-instruments.net/modules/tides): Tidal modulator.
-* [Veils](http://mutable-instruments.net/modules/veils): Quad VCA.
-* [Volts](http://mutable-instruments.net/modules/volts): +5V power module.
-* [Warps](http://mutable-instruments.net/modules/warps): Meta-modulator.
-* [Yarns](http://mutable-instruments.net/modules/yarns): MIDI interface.
+
+Dependencies
+============
+
+The STM32F-based modules (Plaits, Rings, Marbles) depend on the following library directories:
+- **stmlib**: Contains STM32F peripheral templates, DSP utilities, and the common makefile build rules
+  (stmlib/makefile.inc).
+- **stm_audio_bootloader**: Contains QPSK/FSK audio bootloader source code and the Python wav encoder script
+  (stm_audio_bootloader/qpsk/encoder.py) used to compile firmware binaries into audio update files.
+
+Microcontroller Overview
+========================
+
+The active modules in this repository run on the following microcontrollers:
+
+| Module | MCU Model | Core | Clock Speed | Flash / RAM | Link |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Plaits** | STM32F373CCT6 | ARM Cortex-M4 | 72 MHz | 256 KB / 32 KB | [ST Docs][F373] |
+| **Rings** | STM32F405RGT6 | ARM Cortex-M4 | 168 MHz | 1 MB / 192 KB | [ST Docs][F405] |
+| **Marbles**| STM32F405RGT6 | ARM Cortex-M4 | 168 MHz | 1 MB / 192 KB | [ST Docs][F405] |
+
+[F373]: https://www.st.com/en/microcontrollers-microprocessors/stm32f373cc.html
+[F405]: https://www.st.com/en/microcontrollers-microprocessors/stm32f405rg.html
+
+Documentation & GitHub Pages
+============================
+
+The project documentation is located in the [docs](docs) folder and is hosted via GitHub Pages:
+- **Site URL**: `https://arachnegl.github.io/eurorack/`
+- **Source**: Configured to build from the `/docs` directory on the `master` branch.
+- **Rendering engine**: Jekyll (using `jekyll-theme-minimal` specified in `docs/_config.yml`).
+- **Diagrams & Math**: Automatically renders Mermaid flowcharts and LaTeX mathematical formulas (via KaTeX).
+
+### Tracking Deployments
+
+To track Pages builds and publishing jobs:
+1. **GitHub CLI**: Check the latest build status:
+   `gh api repos/arachnegl/eurorack/pages/builds --jq '.[0] | {status: .status, commit: .commit}'`
+2. **GitHub Web**: Visit Settings -> Pages, or look under the "github-pages" environment on the homepage.
 
 License
 =======

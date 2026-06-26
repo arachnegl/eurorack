@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% seo %}
+    <link rel="stylesheet"
+          href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    {% include head-custom.html %}
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="{{ "/" | relative_url }}">{{ site.title | default: "Firmware Docs" }}</a></h1>
+        <p>{{ site.description }}</p>
+
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="{{ "/" | relative_url }}"
+                 class="{% if page.url == "/" or page.url == "/index.html" %}active{% endif %}">
+                🏠 Portal Home
+              </a>
+            </li>
+            
+            <li>
+              <span class="nav-section">Plaits</span>
+              <ul>
+                <li>
+                  <a href="{{ "/plaits/index.html" | relative_url }}"
+                     class="{% if page.url == "/plaits/index.html" %}active{% endif %}">
+                    Overview
+                  </a>
+                </li>
+                <li>
+                  <a href="{{ "/plaits/ARCHITECTURE.html" | relative_url }}"
+                     class="{% if page.url == "/plaits/ARCHITECTURE.html" %}active{% endif %}">
+                    Architecture
+                  </a>
+                </li>
+                <li>
+                  <a href="{{ "/plaits/BUILD_GUIDE.html" | relative_url }}"
+                     class="{% if page.url == "/plaits/BUILD_GUIDE.html" %}active{% endif %}">
+                    Build Guide
+                  </a>
+                </li>
+                <li>
+                  <span class="nav-subsection">📁 DSP Engines</span>
+                  <ul>
+                    <li>
+                      <a href="{{ "/plaits/dsp/additive_engine.html" | relative_url }}"
+                         class="{% if page.url == "/plaits/dsp/additive_engine.html" %}active{% endif %}">
+                        Additive Engine
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/plaits/dsp/bass_drum_engine.html" | relative_url }}"
+                         class="{% if page.url == "/plaits/dsp/bass_drum_engine.html" %}active{% endif %}">
+                        Bass Drum Engine
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/plaits/dsp/chiptune_engine.html" | relative_url }}"
+                         class="{% if page.url == "/plaits/dsp/chiptune_engine.html" %}active{% endif %}">
+                        Chiptune Engine
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/plaits/dsp/chord_engine.html" | relative_url }}"
+                         class="{% if page.url == "/plaits/dsp/chord_engine.html" %}active{% endif %}">
+                        Chord Engine
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/plaits/dsp/fm_engine.html" | relative_url }}"
+                         class="{% if page.url == "/plaits/dsp/fm_engine.html" %}active{% endif %}">
+                        FM Engine
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/plaits/dsp/grain_engine.html" | relative_url }}"
+                         class="{% if page.url == "/plaits/dsp/grain_engine.html" %}active{% endif %}">
+                        Grain Engine
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/plaits/dsp/hi_hat_engine.html" | relative_url }}"
+                         class="{% if page.url == "/plaits/dsp/hi_hat_engine.html" %}active{% endif %}">
+                        Hi-Hat Engine
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/plaits/dsp/modal_engine.html" | relative_url }}"
+                         class="{% if page.url == "/plaits/dsp/modal_engine.html" %}active{% endif %}">
+                        Modal Engine
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/plaits/dsp/noise_engine.html" | relative_url }}"
+                         class="{% if page.url == "/plaits/dsp/noise_engine.html" %}active{% endif %}">
+                        Noise Engine
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/plaits/dsp/particle_engine.html" | relative_url }}"
+                         class="{% if page.url == "/plaits/dsp/particle_engine.html" %}active{% endif %}">
+                        Particle Engine
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/plaits/dsp/phase_distortion_engine.html" | relative_url }}"
+                         class="{% if page.url == "/plaits/dsp/phase_distortion_engine.html" %}active{% endif %}">
+                        Phase Distortion Engine
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/plaits/dsp/six_op_engine.html" | relative_url }}"
+                         class="{% if page.url == "/plaits/dsp/six_op_engine.html" %}active{% endif %}">
+                        Six Operator FM Engine
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/plaits/dsp/snare_drum_engine.html" | relative_url }}"
+                         class="{% if page.url == "/plaits/dsp/snare_drum_engine.html" %}active{% endif %}">
+                        Snare Drum Engine
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/plaits/dsp/speech_engine.html" | relative_url }}"
+                         class="{% if page.url == "/plaits/dsp/speech_engine.html" %}active{% endif %}">
+                        Speech Engine
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/plaits/dsp/string_engine.html" | relative_url }}"
+                         class="{% if page.url == "/plaits/dsp/string_engine.html" %}active{% endif %}">
+                        String Engine
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/plaits/dsp/string_machine_engine.html" | relative_url }}"
+                         class="{% if page.url == "/plaits/dsp/string_machine_engine.html" %}active{% endif %}">
+                        String Machine Engine
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/plaits/dsp/swarm_engine.html" | relative_url }}"
+                         class="{% if page.url == "/plaits/dsp/swarm_engine.html" %}active{% endif %}">
+                        Swarm Engine
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/plaits/dsp/virtual_analog_engine.html" | relative_url }}"
+                         class="{% if page.url == "/plaits/dsp/virtual_analog_engine.html" %}active{% endif %}">
+                        Virtual Analog Engine
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/plaits/dsp/virtual_analog_vcf_engine.html" | relative_url }}"
+                         class="{% if page.url == "/plaits/dsp/virtual_analog_vcf_engine.html" %}active{% endif %}">
+                        Virtual Analog VCF Engine
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/plaits/dsp/wave_terrain_engine.html" | relative_url }}"
+                         class="{% if page.url == "/plaits/dsp/wave_terrain_engine.html" %}active{% endif %}">
+                        Wave Terrain Engine
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/plaits/dsp/waveshaping_engine.html" | relative_url }}"
+                         class="{% if page.url == "/plaits/dsp/waveshaping_engine.html" %}active{% endif %}">
+                        Waveshaping Engine
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/plaits/dsp/wavetable_engine.html" | relative_url }}"
+                         class="{% if page.url == "/plaits/dsp/wavetable_engine.html" %}active{% endif %}">
+                        Wavetable Engine
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <span class="nav-section">Rings</span>
+              <ul>
+                <li>
+                  <a href="{{ "/rings/index.html" | relative_url }}"
+                     class="{% if page.url == "/rings/index.html" %}active{% endif %}">
+                    Overview
+                  </a>
+                </li>
+                <li>
+                  <a href="{{ "/rings/ARCHITECTURE.html" | relative_url }}"
+                     class="{% if page.url == "/rings/ARCHITECTURE.html" %}active{% endif %}">
+                    Architecture
+                  </a>
+                </li>
+                <li>
+                  <a href="{{ "/rings/BUILD_GUIDE.html" | relative_url }}"
+                     class="{% if page.url == "/rings/BUILD_GUIDE.html" %}active{% endif %}">
+                    Build Guide
+                  </a>
+                </li>
+                <li>
+                  <span class="nav-subsection">📁 DSP Engines</span>
+                  <ul>
+                    <li>
+                      <a href="{{ "/rings/dsp/modal_resonator.html" | relative_url }}"
+                         class="{% if page.url == "/rings/dsp/modal_resonator.html" %}active{% endif %}">
+                        Modal Resonator
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/rings/dsp/sympathetic_string.html" | relative_url }}"
+                         class="{% if page.url == "/rings/dsp/sympathetic_string.html" %}active{% endif %}">
+                        Sympathetic String
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/rings/dsp/inharmonic_string.html" | relative_url }}"
+                         class="{% if page.url == "/rings/dsp/inharmonic_string.html" %}active{% endif %}">
+                        Inharmonic String
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <span class="nav-section">Marbles</span>
+              <ul>
+                <li>
+                  <a href="{{ "/marbles/index.html" | relative_url }}"
+                     class="{% if page.url == "/marbles/index.html" %}active{% endif %}">
+                    Overview
+                  </a>
+                </li>
+                <li>
+                  <a href="{{ "/marbles/ARCHITECTURE.html" | relative_url }}"
+                     class="{% if page.url == "/marbles/ARCHITECTURE.html" %}active{% endif %}">
+                    Architecture
+                  </a>
+                </li>
+                <li>
+                  <a href="{{ "/marbles/BUILD_GUIDE.html" | relative_url }}"
+                     class="{% if page.url == "/marbles/BUILD_GUIDE.html" %}active{% endif %}">
+                    Build Guide
+                  </a>
+                </li>
+                <li>
+                  <span class="nav-subsection">📁 Random Engines</span>
+                  <ul>
+                    <li>
+                      <a href="{{ "/marbles/random/t_generator.html" | relative_url }}"
+                         class="{% if page.url == "/marbles/random/t_generator.html" %}active{% endif %}">
+                        t Generator
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/marbles/random/x_y_generator.html" | relative_url }}"
+                         class="{% if page.url == "/marbles/random/x_y_generator.html" %}active{% endif %}">
+                        X/Y Generators
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ "/marbles/random/deja_vu.html" | relative_url }}"
+                         class="{% if page.url == "/marbles/random/deja_vu.html" %}active{% endif %}">
+                        Deja Vu Memory
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="{{ "/HARDWARE_DESIGN.html" | relative_url }}"
+                 class="{% if page.url == "/HARDWARE_DESIGN.html" %}active{% endif %}">
+                🛠️ Hardware Sourcing
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      
+      <section>
+        {{ content }}
+      </section>
+
+    </div>
+    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const sections = document.querySelectorAll('.nav-section, .nav-subsection');
+        
+        sections.forEach(section => {
+          const siblingList = section.nextElementSibling;
+          if (siblingList && siblingList.tagName === 'UL') {
+            section.classList.add('collapsible-header');
+            
+            const hasActiveLink = siblingList.querySelector('a.active') !== null;
+            
+            if (hasActiveLink) {
+              section.classList.add('expanded');
+              siblingList.classList.add('expanded');
+            } else {
+              section.classList.add('collapsed');
+              siblingList.classList.add('collapsed');
+            }
+            
+            section.addEventListener('click', function() {
+              const isCollapsed = siblingList.classList.contains('collapsed');
+              if (isCollapsed) {
+                siblingList.classList.remove('collapsed');
+                siblingList.classList.add('expanded');
+                section.classList.remove('collapsed');
+                section.classList.add('expanded');
+              } else {
+                siblingList.classList.remove('expanded');
+                siblingList.classList.add('collapsed');
+                section.classList.remove('expanded');
+                section.classList.add('collapsed');
+              }
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

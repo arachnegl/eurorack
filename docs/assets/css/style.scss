@@ -1,0 +1,163 @@
+---
+---
+@import "{{ site.theme }}";
+
+/* Page Container Layout overrides */
+.wrapper {
+  max-width: 920px !important;
+  margin: 0 auto !important;
+  padding: 40px 20px !important;
+}
+
+/* Compact Sidebar overrides */
+header {
+  width: 210px !important;
+  float: left !important;
+  position: sticky !important;
+  top: 30px !important;
+  max-height: calc(100vh - 60px) !important;
+  overflow-y: auto !important;
+  padding-bottom: 20px !important;
+}
+
+header h1 {
+  font-size: 22px !important;
+  margin-bottom: 10px !important;
+}
+
+header p {
+  font-size: 13px !important;
+  color: #666 !important;
+  margin-bottom: 20px !important;
+}
+
+/* Main Content Column width optimization */
+section {
+  width: calc(100% - 245px) !important;
+  float: right !important;
+  padding-left: 30px !important;
+  box-sizing: border-box !important;
+}
+
+/* Hierarchy Navigation Tree styling */
+.sidebar-nav {
+  margin-top: 15px;
+}
+
+.sidebar-nav ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+}
+
+.sidebar-nav li {
+  margin-bottom: 4px !important;
+}
+
+.sidebar-nav a {
+  display: inline-block;
+  font-size: 13px;
+  color: #4b5563;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.sidebar-nav a:hover {
+  color: #1f2937;
+  text-decoration: underline;
+}
+
+.sidebar-nav a.active {
+  color: #7c3aed !important;
+  font-weight: 600 !important;
+}
+
+.nav-section {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #9ca3af;
+  letter-spacing: 0.05em;
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+.nav-subsection {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  color: #6b7280;
+  margin-top: 8px;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.sidebar-nav ul ul {
+  margin-left: 12px !important;
+  border-left: 1px solid #e5e7eb;
+  padding-left: 8px !important;
+}
+
+.sidebar-nav ul ul ul {
+  margin-left: 10px !important;
+  border-left: 1px dotted #d1d5db !important;
+  padding-left: 8px !important;
+}
+
+/* Clear up original redundant theme download lists */
+header ul.downloads {
+  display: none !important;
+}
+
+/* Mobile styling responsiveness */
+@media (max-width: 768px) {
+  header {
+    width: 100% !important;
+    float: none !important;
+    position: relative !important;
+    top: 0 !important;
+    max-height: none !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    margin-bottom: 25px !important;
+    padding-bottom: 15px !important;
+  }
+  section {
+    width: 100% !important;
+    float: none !important;
+    padding-left: 0 !important;
+  }
+}
+
+/* Collapsible Sidebar Styles */
+.collapsible-header {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  padding-right: 20px;
+}
+
+.collapsible-header::after {
+  content: "▾";
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 11px;
+  color: #9ca3af;
+  transition: transform 0.2s ease;
+}
+
+.collapsible-header.collapsed::after {
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+.sidebar-nav ul.collapsed {
+  display: none !important;
+}
+
+.sidebar-nav ul.expanded {
+  display: block !important;
+}
+

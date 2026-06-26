@@ -1,0 +1,5 @@
+title: Mutable Instruments Firmware Docs
+description: Technical architecture deep dives, build guides, and DSP engine references for Plaits, Rings, and Marbles.
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-seo-tag
